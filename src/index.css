@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #09090B;
+  --color-accent: #22D3EE;
+  --color-card: #121214;
+}
+
+/* responsive typography & fluid spacing */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    @apply antialiased;
+  }
+  
+  body {
+    background-color: var(--color-background);
+    /* Prevent horizontal scroll on mobile due to glow effects */
+    overflow-x: hidden; 
+    width: 100%;
+  }
+
+  /* Scale down massive headings on mobile */
+  h1 {
+    @apply text-balance;
+  }
+}
+
+/* Custom Hide Scrollbar for clean mobile look */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
